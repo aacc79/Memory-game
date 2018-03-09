@@ -1,0 +1,162 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    cursor: url('../img/cursor.png'), auto;
+}
+
+body {
+    background-image: url('../img/fondo.jpg');
+    background-repeat: no-repeat;
+    cursor: url('../img/cursor.png'), auto;
+       
+      }
+
+.section:first-child{margin: auto}
+.rejilla{
+    margin: -1000px auto;
+    /* limitamos el ancho para que no se vea muy ancho */
+    max-width: 1200px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    transition: all 1000ms ease-in-out;
+    z-index: 5;
+}
+
+.rejilla.start{margin: 0 auto}
+.rejilla.out{margin: -1000px auto;}
+
+#game-over{
+    opacity: 0;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+ 
+  transition: all 2s ease-in-out;
+  z-index: -5;
+}
+
+/* TARJETA es la que va a contener las imágenes */
+.tarjeta{
+
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+
+    
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1 linear;
+    border-radius: 5px;
+}
+
+.anverso{
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/Logo.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* centramos el fondo en el div */
+    background-position: center;
+    /* Para que no se desborden */
+    position: absolute; 
+    /* ocultamos la otra cara */
+    backface-visibility: hidden;
+
+    border-radius: 30px;
+
+}
+
+.reverso{
+    height: 150px;
+    width: 150px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* centramos el fondo en el div */
+    background-position: center;
+
+    transform: rotateY(180deg);
+    /* Para que no se desborden */
+    position: absolute; 
+    /* ocultamos la otra cara */
+    backface-visibility: hidden;
+  
+}
+
+img{
+    z-index: -1;
+    border-radius: 5px;
+}
+
+
+.mostrar{display: initial;}
+.ocultar{display:none;}
+
+/* #lifeFull{display: none}
+#lifeHalf{display: none}
+#lifeLast{display: none} */
+.seleccionado{
+    /* Para que al seleccionarlo de la vuelta */
+    transform: rotateY(180deg);
+}
+
+.eliminado .anverso{
+    /* así quitamos de en medio a los dos eliminados */
+    background-image: none !important;
+}
+
+#relojID{
+    color: darkred;
+    font-size: 80px;
+    justify-self: center;
+}
+
+#winner{
+    font-family: 'Mina', sans-serif;
+    font-size: 100px;
+    text-align: center;
+    color: darkred;
+
+
+    position: fixed;
+    top: 100%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+  
+    transition: all 500ms ease-in-out;
+    display: none;
+
+}
+
+#winner.open{
+    top: 50%; 
+   
+    display: initial;
+}
+
+/* Para que no se solapen el botón start y la imagen de ganador */
+#winner img{
+    margin-top: 125px
+}
+
+.cabecera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: transparent;
+    border: transparent;
+    z-index: 2;
+    /* font-size: 40px; */
+    /* padding: 20px 20px; */
+   
+}

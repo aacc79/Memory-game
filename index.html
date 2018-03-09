@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MEMORY GAME</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- recargar página automáticamente -->
+    <!-- <meta http-equiv="refresh" content="100"> -->
+    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+</head>
+<body>
+    <span id="string"></span>
+    <div class="cabecera">
+        <!-- cada vez que le das al botón baraja las cartas e inicia -->
+        <!-- OJITO con el orden en que se ponen las funciones del onclick -->
+        <button onclick=" baraja(); reloj();" id="start"><img src="./img/start.png" alt=""></button>
+    </div>
+    <!-- fin de cabecera -->
+    <div id="relojID"></div>
+    <img id="lifeFull" height="50px" src="./img/lifeFull.png" alt="">
+    <img id="lifeHalf" height="50px" src="./img/lifeHalf.png" alt="">
+    <img id="lifeLast" height="50px" src="./img/lifeLast.png" alt="">
+    <!-- ponemos un div game en el que vamos a cargar de manera dinámica todo -->
+    <div id="game">
+        <div id="winner"><img src="./img/ganador.jpg" alt=""><p>Lo has conseguido</p></div>
+        <div id="game-over"><img src="./img/gameover.jpg" alt=""></div>
+    </div>
+    <!-- fin de game -->
+
+    <!-- ponemos el volumen a la mitad para que suene menos que los efectos -->
+    <audio loop volume='0.5' id="song" src="./audio/song.mp3"></audio>
+    <audio id="clic" src="./audio/clic.mp3"></audio>
+    <audio id="bounce" src="./audio/bounce.mp3"></audio>
+    <audio id="win" src="./audio/winner.mp3"></audio>  
+    <audio id="fail" src="./audio/fail.mp3"></audio>  
+
+    
+   <script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
