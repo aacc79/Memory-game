@@ -427,4 +427,4 @@ var resetSel= function(){
 
 
 
-    
+    /* versión 1.0.2 */
